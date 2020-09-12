@@ -8,8 +8,8 @@ import aiohttp
 import json
 from discord import Game
 from discord.ext.commands import Bot
-
-bot = commands.Bot(command_prefix='!')
+BOT_PREFIX = ("?", "!", "#")
+bot = commands.Bot(command_prefix=BOT_PREFIX)
 
 channel = bot.get_channel(754175437550387282)
 
@@ -46,4 +46,14 @@ async def suma_palabras(ctx, n1, n2):
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name="Alfredcuck"))
     print("Logged in as " + bot.user.name)
+@bot.command()
+async def bitcoin():
+ url= 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
+ async with aiohttp.ClientSession() as session:
+ raw_response= await session.get(url)
+ response= await raw_response.text()
+ response = json.loads(response)
+ await bot.say("Bitcoin price is $" + response['bpi']['USD']['rate']
+
+
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
