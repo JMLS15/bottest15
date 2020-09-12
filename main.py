@@ -30,11 +30,11 @@ client = Bot(command_prefix=BOT_PREFIX)
         await ctx.send(html_2['datetime'])
 @client.command()
  async def suma(ctx, n1: int, n2: int):
-     await ctx.send(n1+n2)
+  await ctx.send(n1+n2)
 @client.event
  async def on_ready():
- print("El bot esta listo.")
+  print("El bot esta listo.")
 @client.event
  async def change_status(self):
- await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
