@@ -37,4 +37,15 @@ async def on_ready():
 @client.event
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
+@client.command()
+async def resta(ctx, n1: int, n2: int):
+ await ctx.send(n1-n2)
+
+@client.command()
+async def multiplicacion(ctx, n1: int, n2: int):
+ await ctx.send(n1*n2)
+
+@client.command()
+async def division(ctx, n1: int, n2: int):
+ await ctx.send(n1/n2)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
