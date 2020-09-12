@@ -31,7 +31,8 @@ async def Time(ctx):
         html_2= await html.text()
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
+
 @client.command()
 async def suma(ctx, n1: int, n2: int):
-await ctx.send(n1+n2)
+     await ctx.send(n1+n2)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
