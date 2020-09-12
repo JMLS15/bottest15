@@ -20,8 +20,7 @@ async def abofetea(ctx, *, reason: Slapper):
     await ctx.send(reason)
 @bot.command()
 async def suma(ctx, n1: float, n2: float):
-    suma2=[n1+n2]
-    await ctx.send(suma2)
+    await ctx.send(n1+n2)
 
 @bot.command()
 async def resta(ctx, n1: float, n2: float):
@@ -39,8 +38,7 @@ async def repite(ctx, arg):
     await ctx.send(arg)
 @bot.command()
 async def suma_palabras(ctx, n1, n2):
-    suma2=[n1+n2]
-    await ctx.send(suma2)
+    await ctx.send(n1+n2)
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name="with humans"))
