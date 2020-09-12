@@ -32,4 +32,12 @@ async def repite(ctx, arg):
 @bot.command()
 async def suma_palabras(ctx, n1, n2):
     await ctx.send(n1+n2)
+@bot.event()
+async def on_message(message):
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+    if message.content.startswith('eri gey?'):
+        msg = 'no soy'.format(message)
+        await client.send_message(message.channel, msg)
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
