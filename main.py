@@ -41,6 +41,6 @@ async def suma_palabras(ctx, n1, n2):
     await ctx.send(n1+n2)
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name="RONiNcuck"))
+    await bot.change_presence(activity=discord.Game(name="Alfredcuck"))
     print("Logged in as " + bot.user.name)
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
