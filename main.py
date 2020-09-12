@@ -1,59 +1,39 @@
-from discord.ext import commands
-import discord
-import random
-import secrets
 import random
 import asyncio
 import aiohttp
 import json
-from discord import Game
+import discord
+from osuapi import OsuApi, AHConnector
 from discord.ext.commands import Bot
-BOT_PREFIX = ("?", "!", "#")
-bot = commands.Bot(command_prefix=BOT_PREFIX)
-
-channel = bot.get_channel(754175437550387282)
-
-class Slapper(commands.Converter):
-    async def convert(self, ctx, argument):
-        to_slap = random.choice(ctx.channel.members)
-        return '{0.author} ha abofeteado a {1} por *{2}*'.format(ctx, to_slap, argument)
-
-@bot.command()
-async def abofetea(ctx, *, reason: Slapper):
-    await ctx.send(reason)
-@bot.command()
-async def suma(ctx, n1: float, n2: float):
-    await ctx.send(n1+n2)
-
-@bot.command()
-async def resta(ctx, n1: float, n2: float):
-    await ctx.send(n1-n2)
-
-@bot.command()
-async def multiplicacion(ctx, n1: float, n2: float):
-    await ctx.send(n1*n2)
-
-@bot.command()
-async def division(ctx, n1: float, n2: float):
-    await ctx.send(n1/n2)
-@bot.command()
-async def repite(ctx, arg):
-    await ctx.send(arg)
-@bot.command()
-async def suma_palabras(ctx, n1, n2):
-    await ctx.send(n1+n2)
-@bot.event
+BOT_PREFIX= ("?", "!")
+client = Bot(command_prefix=BOT_PREFIX)
+@client.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name="Alfredcuck"))
-    print("Logged in as " + bot.user.name)
-@bot.command()
-async def bitcoin():
- url= 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
- async with aiohttp.ClientSession() as session:
- raw_response= await session.get(url)
- response= await raw_response.text()
- response = json.loads(response)
- await bot.say("Bitcoin price is $" + response['bpi']['USD']['rate']
-
-
-bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
+    print("El bot esta listo.")
+@client.command()
+async def USD(ctx):
+    async with aiohttp.ClientSession() as session:
+        html = await session.get('https://api.coindesk.com/v1/bpi/currentprice/BTC.json')
+        html2 = await html.text()
+        html2 = json.loads(html2)
+        await ctx.send("Bitcoin price is: $"+ html2['bpi']['USD']['rate'])
+@client.command()
+async def JPY(ctx):
+    async with aiohttp.ClientSession() as session:
+        html = await session.get('https://api.coindesk.com/v1/bpi/currentprice/JPY.json')
+        html2 = await html.text()
+        html2 = json.loads(html2)
+        await ctx.send("Bitcoin price is: ¥"+ html2['bpi']['JPY']['rate'])
+@client.command()
+async def Time(ctx):
+    async with aiohttp.ClientSession() as session:
+        html = await session.get('http://worldtimeapi.org/api/ip.json')
+        html_2= await html.text()
+        html_2= json.loads(html_2)
+        await ctx.send(html_2['datetime'])
+@client.command()
+async def get_peppy_user_id(ctx):
+  api = OsuApi("mykey", connector=AHConnector())
+  results = await api.get_user("peppy")
+  await ctx.send(results[0].user_id)
+client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
