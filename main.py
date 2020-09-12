@@ -51,12 +51,12 @@ async def on_message(message):
 async def on_message(message):
     if message.content.startswith('commands'):
     msg='Commands available:
-    !abofetea (razon)
-    !suma (numero) (numero2)
-    !resta (numero) (numero2)
-    !multiplicacion (numero) (numero2)
-    !division (numero) (numero2)
-    !suma_palabras (palabra1 a combinar) (palabra2 a combinar)
-    !repite (sentencia a repetir)'
+    abofetea razon
+    suma numero1 numero2
+    resta numero1 numero2
+    multiplicacion numero1 numero2
+    division numero1 numero2
+    suma_palabras palabra1 a combinar palabra2 a combinar
+    repite sentencia a repetir'
     await message.channel.send(msg)
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
