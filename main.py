@@ -29,7 +29,7 @@ async def Time(ctx):
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
 @client.command()
-async def suma(ctx, n1: int, n2: int):
+async def suma(ctx, n1: float, n2: float):
   await ctx.send(n1+n2)
 @client.event
 async def on_ready():
@@ -38,14 +38,14 @@ async def on_ready():
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
-async def resta(ctx, n1: int, n2: int):
+async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
 
 @client.command()
-async def multiplicacion(ctx, n1: int, n2: int):
+async def multiplicacion(ctx, n1: float, n2: float):
  await ctx.send(n1*n2)
 
 @client.command()
-async def division(ctx, n1: int, n2: int):
+async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
