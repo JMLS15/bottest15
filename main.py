@@ -33,7 +33,7 @@ async def repite(ctx, arg):
 async def suma_palabras(ctx, n1, n2):
     await ctx.send(n1+n2)
 @bot.event()
-async def on_message(message)
+async def on_message(message):
     if message.author == bot.user:
         return
     if message.content=='eri god?':
