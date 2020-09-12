@@ -44,6 +44,5 @@ async def suma_palabras(ctx, n1, n2):
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name="with humans"))
-    await bot.
     print("Logged in as " + bot.user.name)
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
