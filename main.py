@@ -33,7 +33,7 @@ async def Time(ctx):
         await ctx.send(html_2['datetime'])
 @client.command()
 async def get_peppy_user_id(ctx):
-  api = OsuApi("mykey", connector=AHConnector())
+  api = OsuApi("f5bMGaRrgHMwF0Om745ylT7QfzedhWP71KOUEMrS", connector=AHConnector())
   results = await api.get_user("peppy")
   await ctx.send(results[0].user_id)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
