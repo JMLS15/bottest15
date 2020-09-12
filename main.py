@@ -8,7 +8,7 @@ import aiohttp
 import json
 from discord import Game
 from discord.ext.commands import Bot
-bot = commands.Bot(command_prefix='#')
+bot = commands.Bot(command_prefix='?')
 channel = bot.get_channel(754175437550387282)
 class Slapper(commands.Converter):
     async def convert(self, ctx, argument):
