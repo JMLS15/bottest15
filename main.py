@@ -35,6 +35,6 @@ async def suma(ctx, n1: int, n2: int):
 async def on_ready():
   print("El bot esta listo.")
 @client.event
-async def change_status(self):
+async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
