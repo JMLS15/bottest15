@@ -43,4 +43,8 @@ async def suma_palabras(ctx, n1, n2):
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name="Alfredcuck"))
     print("Logged in as " + bot.user.name)
+@bot.event
+async def on_message(message):
+    if 'eri god?' in message.content.lower():
+        await message.channel.send('Si soy')
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
