@@ -8,8 +8,11 @@ import aiohttp
 import json
 from discord import Game
 from discord.ext.commands import Bot
-bot = commands.Bot(command_prefix='?')
+
+bot = commands.Bot(command_prefix='!')
+
 channel = bot.get_channel(754175437550387282)
+
 class Slapper(commands.Converter):
     async def convert(self, ctx, argument):
         to_slap = random.choice(ctx.channel.members)
@@ -47,7 +50,4 @@ async def on_ready():
 async def on_message(message):
     if 'eri god?' in message.content.lower():
         await message.channel.send('Si soy')
-@bot.command()
-async def commands(ctx):
-    await ctx.send('hola')
 bot.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
