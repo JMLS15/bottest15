@@ -48,4 +48,12 @@ async def multiplicacion(ctx, n1: float, n2: float):
 @client.command()
 async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
+@client.event
+async def on_ready():
+ channel = client.get_channel('428654179217571842')
+  role = discord.utils.get(user.server.roles, name="Azul")
+   message = await client.send_message(channel, "Mensaje TEST")
+    while True:
+     reaction = await client.wait_for_reaction(emoji=":)", message=message)
+      await client.add_roles(reaction.message.author, role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
