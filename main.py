@@ -45,6 +45,10 @@ async def test(ctx):
   down = '\N{THUMBS DOWN SIGN}'
   await message.add_reaction(up)
   await message.add_reaction(down)
+  role = discord.utils.get(user.server.roles, name="Azul")
+  while True:
+    reaction = await client.wait_for_reaction(emoji=up, message=message)
+    await client.add_roles(reaction.message.author, role)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
