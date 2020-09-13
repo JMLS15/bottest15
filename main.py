@@ -34,7 +34,7 @@ async def suma(ctx, n1: float, n2: float):
 @client.event
 async def on_ready():
   Channel = client.get_channel(428654179217571842)
-  Text ="!Bot en linea!"
+  Text ="!Bot online!"
   Emoji = await Channel.send(Text)
   await client.add_reaction(Emoji, emoji='🏃')
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
