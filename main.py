@@ -37,6 +37,12 @@ async def on_ready():
   Text ="!Bot en linea!"
   await Channel.send(Text)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
+@client.event
+async def on_ready():
+  Channel = client.get_channel(703853970346737715)
+  Text ="Reacciona para obtener un Rol."
+  message = await Channel.send(Text)
+  await message.add_reaction(":)")
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
