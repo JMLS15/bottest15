@@ -58,4 +58,14 @@ async def c(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Grupo C")
   await discord.Member.add_roles(user, role)
+@client.command(pass_context=True)
+async def cr(ctx):
+  user = ctx.message.author
+  role = discord.utils.get(user.guild.roles, name="Grupo C")
+  await discord.Member.remove_roles(user, role)
+@client.command(pass_context=True)
+async def ar(ctx):
+  user = ctx.message.author
+  role = discord.utils.get(user.guild.roles, name="Grupo A")
+  await discord.Member.remove_roles(user, role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
