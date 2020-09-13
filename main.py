@@ -35,11 +35,11 @@ async def suma(ctx, n1: float, n2: float):
 async def on_ready():
   Channel = client.get_channel(428654179217571842)
   Text ="!Bot online!"
-  await Channel.send(Text)
+  message = await Channel.send(Text)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
   while True:
-   reaction, reactor = await client.wait_for_reaction(emoji=":thumbsup", message=message)
-   await client.add_roles(reactor, Azul)
+   reaction, reactor = await client.wait_for_reaction(emoji=":thumbsup", message=Text)
+   await client.add_roles(reactor, "Azul")
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
