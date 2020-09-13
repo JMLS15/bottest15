@@ -34,21 +34,11 @@ async def suma(ctx, n1: float, n2: float):
 @client.event
 async def on_ready():
   Text2 = "Bot en linea."
-  Text3 = "Reacciona para obtener un rol."
   Channel = client.get_channel(703853970346737715)
-  await Channel.send(Text2)
+  message = await Channel.send(Text2)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
-  message = await Channel.send(Text3)
   up = '\N{THUMBS UP SIGN}'
-  down = '\N{THUMBS DOWN SIGN}'
   await message.add_reaction(up)
-  await message.add_reaction(down)
-@client.event
-async def on_reaction_add(reaction, user):
-  Channel = client.get_channel(703853970346737715)
-  if reaction.emoji =="👍":
-    Role = discord.utils.get(user.server.roles, name="Azul")
-    await user.add_roles(user, Role)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
