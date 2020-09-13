@@ -39,9 +39,9 @@ async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
 async def test(ctx):
-  Text ="!Bot en linea!"
+  Text ="Reacciona para obtener un rol (TEST)"
   message = await ctx.send(Text)
-  cross = client.get_emoji(558322190060093441)
+  cross = '\N{THUMBS UP SIGN}'
   await message.add_reaction(cross)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
