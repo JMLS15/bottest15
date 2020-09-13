@@ -7,8 +7,6 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
-global Channel
-Channel = client.get_channel(703853970346737715)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
@@ -45,14 +43,12 @@ async def on_ready():
   down = '\N{THUMBS DOWN SIGN}'
   await message.add_reaction(up)
   await message.add_reaction(down)
-  role = discord.utils.get(Channel.server.roles, name="Azul")
-  role2 = discord.utils.get(Channel.server.roles, name="Rojo")
-  while True:
-    reaction = await message.wait_for_reaction(emoji=up, message=message)
-    await message.add_roles(reaction, role)
-  while True:
-    reaction2 = await message.wait_for_reaction(emoji=down, message=message)
-    await message.add_roles(reaction2, role2)
+@client.event
+async def on_reaction_add(reaction, user):
+  Channel = client.get_channel(703853970346737715)
+  if reaction.emoji =="👍":
+    Role = discord.utils.get(user.server.roles, name="Azul")
+    await user.add_roles(user, Role)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
