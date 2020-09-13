@@ -38,7 +38,7 @@ async def on_ready():
   await Channel.send(Text)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
   while True:
-   reaction, reactor = await client.wait_for_reaction(emoji="👍", message=message)
+   reaction, reactor = await client.wait_for_reaction(emoji=":thumbsup", message=message)
    await client.add_roles(reactor, Azul)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
