@@ -48,4 +48,12 @@ async def multiplicacion(ctx, n1: float, n2: float):
 @client.command()
 async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
+@client.command()
+async def a(ctx, member:discord.Member, role: discord.Role):
+  user = ctx.message.author
+  role = discord.utils.get(user.guild.roles, name="Azul")
+  if role in member.roles:
+    await member.remove_roles(role)
+  else:
+    await member.add_roles(role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
