@@ -68,4 +68,8 @@ async def ar(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Grupo A")
   await discord.Member.remove_roles(user, role)
+@client.command()
+async def roles(ctx):
+  texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
+  await ctx.send(texto)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
