@@ -50,10 +50,9 @@ async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
 @client.event
 async def on_ready():
-    Channel = client.get_channel('428654179217571842')
-    Text= "React to get a role"
-    Moji = await client.send_message(Channel, Text)
-    await client.add_reaction(Moji, emoji='🏃')
+  Channel = client.get_channel(428654179217571842)
+  Text = "!Bot linea!"
+  await Channel.send(Text)
 @client.event
 async def on_reaction_add(reaction, user):
     Channel = client.get_channel('428654179217571842')
