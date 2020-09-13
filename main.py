@@ -54,6 +54,6 @@ async def on_ready():
   role = discord.utils.get(user.server.roles, name="Azul")
    message = await client.send_message(channel, "Mensaje TEST")
     while True:
-     reaction = await client.wait_for_reaction(emoji=":)", message=message)
+     reaction = await client.wait_for_reaction(emoji="🏃", message=message)
       await client.add_roles(reaction.message.author, role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
