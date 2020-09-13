@@ -36,7 +36,7 @@ async def on_ready():
   Channel = client.get_channel(703853970346737715)
   Text ="!Bot online!"
   message = await Channel.send(Text)
-  await message.add_reaction(':)')
+  await message.add_reaction(":)")
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
 async def resta(ctx, n1: float, n2: float):
