@@ -35,17 +35,14 @@ async def suma(ctx, n1: float, n2: float):
 async def on_ready():
   Channel = client.get_channel(703853970346737715)
   Text ="!Bot online!"
-  message = await Channel.send(Text)
-  await message.add_reaction(":)")
+  await Channel.send(Text)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
-
 @client.command()
 async def multiplicacion(ctx, n1: float, n2: float):
  await ctx.send(n1*n2)
-
 @client.command()
 async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
