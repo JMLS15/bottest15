@@ -50,10 +50,16 @@ async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
 @client.event
 async def on_ready():
- channel = client.get_channel('428654179217571842')
-  role = discord.utils.get(user.server.roles, name="Azul")
-   message = await client.send_message(channel, "Mensaje TEST")
-    while True:
-     reaction = await client.wait_for_reaction(emoji="🏃", message=message)
-      await client.add_roles(reaction.message.author, role)
+    Channel = client.get_channel('428654179217571842')
+    Text= "React to get a role"
+    Moji = await client.send_message(Channel, Text)
+    await client.add_reaction(Moji, emoji='🏃')
+@client.event
+async def on_reaction_add(reaction, user):
+    Channel = client.get_channel('428654179217571842')
+    if reaction.message.channel.id != Channel
+    return
+    if reaction.emoji == "🏃":
+      Role = discord.utils.get(user.server.roles, name="Azul")
+      await client.add_roles(user, Role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
