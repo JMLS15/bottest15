@@ -7,6 +7,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
+global Channel
 Channel = client.get_channel(703853970346737715)
 @client.command()
 async def USD(ctx):
@@ -41,15 +42,21 @@ async def on_ready():
 @client.command()
 async def test(ctx):
   Text ="Reacciona para obtener un rol (TEST)"
+  global message
   message = await ctx.send(Text)
+  global up
+  global down
   up = '\N{THUMBS UP SIGN}'
   down = '\N{THUMBS DOWN SIGN}'
   await message.add_reaction(up)
   await message.add_reaction(down)
-  role = discord.utils.get(Channel.server.roles, name="Azul")
-  while True:
-    reaction = await message.wait_for_reaction(emoji="👍", message=message)
-    await message.add_roles(reaction, role)
+@client.event
+async def on_reaction_add(reaction, user):
+  if reaction.user==client.user:
+    return
+    if reaction.message == message and reaction.emoji == up:
+      verified = discord.utils.get(user.server.roles, name="Azul")
+      await message.add_roles(user, verified)
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
