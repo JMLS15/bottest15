@@ -33,9 +33,9 @@ async def suma(ctx, n1: float, n2: float):
   await ctx.send(n1+n2)
 @client.event
 async def on_ready():
-  print("El bot esta listo.")
-@client.event
-async def on_ready():
+  Channel = client.get_channel(428654179217571842)
+  Text ="!Bot linea!"
+  await Channel.send(Text)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
 async def resta(ctx, n1: float, n2: float):
@@ -48,17 +48,4 @@ async def multiplicacion(ctx, n1: float, n2: float):
 @client.command()
 async def division(ctx, n1: float, n2: float):
  await ctx.send(n1/n2)
-@client.event
-async def on_ready():
-  Channel = client.get_channel(428654179217571842)
-  Text = "!Bot linea!"
-  await Channel.send(Text)
-@client.event
-async def on_reaction_add(reaction, user):
-    Channel = client.get_channel('428654179217571842')
-    if reaction.message.channel.id != Channel
-    return
-    if reaction.emoji == "🏃":
-      Role = discord.utils.get(user.server.roles, name="Azul")
-      await client.add_roles(user, Role)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
