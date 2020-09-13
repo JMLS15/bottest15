@@ -7,7 +7,6 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
-Channel= client.get_channel(703853970346737715)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
@@ -34,8 +33,9 @@ async def suma(ctx, n1: float, n2: float):
   await ctx.send(n1+n2)
 @client.event
 async def on_ready():
-  Text = "Bot en linea"
-  await Channel.send(Text)
+  Text2 = "Bot en linea"
+  Channel = client.get_channel(703853970346737715)
+  await Channel.send(Text2)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
 @client.command()
 async def test(ctx):
