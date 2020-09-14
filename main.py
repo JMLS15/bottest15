@@ -74,7 +74,7 @@ async def roles(ctx):
   await ctx.send(texto)
 @client.event
 async def on_message(message):
-  texto= "El alfredo es un cuck"
+  texto= "Quien es el mas cuck"
   Channel = client.get_channel(428654179217571842)
   if message.content.startswith(texto):
     await Channel.send('Quien mas si no el alfredcuck')
