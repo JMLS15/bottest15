@@ -51,22 +51,22 @@ async def division(ctx, n1: float, n2: float):
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
-  role = discord.utils.get(user.guild.roles, name="Grupo A")
+  role = discord.utils.get(user.guild.roles, name="Clase A")
   await discord.Member.add_roles(user, role)
 @client.command(pass_context=True)
 async def c(ctx):
   user = ctx.message.author
-  role = discord.utils.get(user.guild.roles, name="Grupo C")
+  role = discord.utils.get(user.guild.roles, name="Clase C")
   await discord.Member.add_roles(user, role)
 @client.command(pass_context=True)
 async def cr(ctx):
   user = ctx.message.author
-  role = discord.utils.get(user.guild.roles, name="Grupo C")
+  role = discord.utils.get(user.guild.roles, name="Clase C")
   await discord.Member.remove_roles(user, role)
 @client.command(pass_context=True)
 async def ar(ctx):
   user = ctx.message.author
-  role = discord.utils.get(user.guild.roles, name="Grupo A")
+  role = discord.utils.get(user.guild.roles, name="Clase A")
   await discord.Member.remove_roles(user, role)
 @client.command()
 async def roles(ctx):
