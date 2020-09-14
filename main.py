@@ -34,7 +34,7 @@ async def suma(ctx, n1: float, n2: float):
 @client.event
 async def on_ready():
   Text2 = "Bot en linea."
-  Channel = client.get_channel(703853970346737715)
+  Channel = client.get_channel(428654179217571842)
   message = await Channel.send(Text2)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
   up = '\N{THUMBS UP SIGN}'
@@ -72,4 +72,10 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
+@client.event
+async def on_message(message):
+  texto= "El alfredo es un cuck"
+  Channel = client.get_channel(428654179217571842)
+  if message.content.startswith(texto):
+    await Channel.send('Quien mas si no el alfredcuck')
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
