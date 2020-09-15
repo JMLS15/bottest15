@@ -31,6 +31,9 @@ async def Time(ctx):
 @client.command()
 async def suma(ctx, n1: float, n2: float):
   await ctx.send(n1+n2)
+@client.command()
+async def sumap(ctx, n1, n2):
+  await ctx.send(n1+n2)
 @client.event
 async def on_ready():
   Text2 = "Bot en linea."
