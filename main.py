@@ -3,10 +3,16 @@ import asyncio
 import aiohttp
 import json
 import discord
+import traceback
 from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
+@client.event
+async def on_error(event, *args, **kwargs):
+    message = args[0]
+    logging.warning(traceback.format_exc())
+    await client.send_message(message.channel, "You caused an error!")
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
