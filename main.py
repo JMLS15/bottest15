@@ -39,7 +39,7 @@ async def on_ready():
   Text2 = "Bot en linea."
   Channel = client.get_channel(755235901046784051)
   message = await Channel.send(Text2)
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
+  await client.change_presence(game=discord.game(type=1, name="COD BO3 Zombies"))
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
 @client.event
