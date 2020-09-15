@@ -12,7 +12,7 @@ client = Bot(command_prefix=BOT_PREFIX)
 async def on_error(event, *args, **kwargs):
     message = args[0]
     logging.warning(traceback.format_exc())
-    await client.send_message(message.channel, "You caused an error!")
+    await client.send(message.channel, "You caused an error!")
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
@@ -44,7 +44,7 @@ async def sumap(ctx, n1, n2):
 async def on_ready():
   Text2 = "Bot en linea."
   Channel = client.get_channel(755235901046784051)
-  await bot.change_presence(activity=discord.Streaming(name="Watching:", url='https://www.twitch.tv/alexelcapo'))
+  await bot.change_presence(activity=discord.Streaming(name="Watching:", url="https://www.twitch.tv/alexelcapo"))
   message = await Channel.send(Text2)
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
