@@ -34,7 +34,7 @@ async def suma(ctx, n1: float, n2: float):
 @client.event
 async def on_ready():
   Text2 = "Bot en linea."
-  Channel = client.get_channel(428654179217571842)
+  Channel = client.get_channel(755235901046784051)
   message = await Channel.send(Text2)
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
   up = '\N{THUMBS UP SIGN}'
