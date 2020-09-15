@@ -44,6 +44,7 @@ async def sumap(ctx, n1, n2):
 async def on_ready():
   Text2 = "Bot en linea."
   Channel = client.get_channel(755235901046784051)
+  await bot.change_presence(activity=discord.Streaming(name="Watching:", url='https://www.twitch.tv/alexelcapo'))
   message = await Channel.send(Text2)
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
