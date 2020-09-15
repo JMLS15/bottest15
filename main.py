@@ -72,10 +72,4 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-@client.event
-async def on_message(message):
-  Channel = client.get_channel(428654179217571842)
-  Texto="El alfredcuck"
-  if message.content.startswith('¿Quien es un cuck?'):
-  await channel.send(Texto)
 client.run('NzU0MTM4ODgwNjkyOTc3NzY1.X1wYkA.GWOur_tL1PWngEq3_DQYyivXrOs')
