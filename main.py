@@ -42,6 +42,11 @@ async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="TEST"))
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
+@client.event
+async def on_message(message):
+    Channel = client.get_channel(755235901046784051)
+    if message.content.startswith('¿Quien es el mas cuck?'):
+        await Channel.send('Quien mas si no el alfredcuck')
 @client.command()
 async def resta(ctx, n1: float, n2: float):
  await ctx.send(n1-n2)
