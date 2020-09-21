@@ -12,7 +12,7 @@ client = Bot(command_prefix=BOT_PREFIX)
 async def report(ctx):
     await client.delete_message(ctx.message)
     report = f"\"{ctx.message.content[8:]}\"  sent by {ctx.message.author}"
-    await client.send_message(client.get_channel("428654179217571842"), report)
+    await client.send(client.get_channel("428654179217571842"), report)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
