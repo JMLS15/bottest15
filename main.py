@@ -8,11 +8,6 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
-@client.command(pass_context=True)
-async def report(ctx):
-    await client.delete_message(ctx.message)
-    report = f"\"{ctx.message.content[8:]}\"  sent by {ctx.message.author}"
-    await client.send(client.get_channel("428654179217571842"), report)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
