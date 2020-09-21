@@ -10,9 +10,9 @@ BOT_PREFIX= ("?", "!")
 client = Bot(command_prefix=BOT_PREFIX)
 @client.command(pass_context=True)
 async def report(ctx):
-    await bot.delete_message(ctx.message)
+    await client.delete_message(ctx.message)
     report = f"\"{ctx.message.content[8:]}\"  sent by {ctx.message.author}"
-    await bot.send_message(bot.get_channel("428654179217571842"), report)
+    await client.send_message(client.get_channel("428654179217571842"), report)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
