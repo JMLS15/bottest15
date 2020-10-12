@@ -36,6 +36,7 @@ async def sumap(ctx, n1, n2):
   await ctx.send(n1+n2)
 @client.event
 async def on_ready():
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
   Text2 = "Bot en linea."
   print("Bot en linea.")
   Channel = client.get_channel(755235901046784051)
