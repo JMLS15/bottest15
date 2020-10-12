@@ -4,7 +4,7 @@ import json
 import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
-BOT_PREFIX= ("?", "!")
+BOT_PREFIX= ("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
 @client.command()
