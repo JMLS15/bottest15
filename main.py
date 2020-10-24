@@ -14,7 +14,6 @@ async def USD(ctx):
         html2 = await html.text()
         html2 = json.loads(html2)
         await ctx.send("Bitcoin price is: $"+ html2['bpi']['USD']['rate'])
-@client.command()
 async def JPY(ctx):
     async with aiohttp.ClientSession() as session:
         html = await session.get('https://api.coindesk.com/v1/bpi/currentprice/JPY.json')
