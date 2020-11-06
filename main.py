@@ -39,7 +39,7 @@ async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
   Text2 = "Bot en linea."
   print("Bot en linea.")
-  Channel = client.get_channel(755235901046784051)
+  Channel = client.get_channel(754175437550387282)
   message = await Channel.send(Text2)
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
