@@ -2,11 +2,46 @@ import asyncio
 import aiohttp
 import json
 import discord
+import datetime as dt
 from discord.ext.commands import Bot
 from discord.ext import commands
 BOT_PREFIX= ("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
+@client.event
+async def on_ready():
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
+  Text2 = "Bot en linea."
+  print("Bot en linea.")
+  Channel = client.get_channel(754175437550387282)
+  message = await Channel.send(Text2)
+  up = '\N{THUMBS UP SIGN}'
+  await message.add_reaction(up)
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content=="HolaF":
+        await message.channel.send("Hola!!!")
+    await client.process_commands(message)
+@client.listen()
+async def on_message(message):
+    up1='\N{THUMBS UP SIGN}'
+    if message.content=="Hola":
+        await message.add_reaction(up1)
+    if message.content=="El alfredo es un coke":
+        await message.add_reaction(up1)
+@tasks.loop(hours=16)
+async def msg1():
+    message_channel= client.get_channel(754175437550387282)
+    await message_channel.send("HOLA")
+@msg1.before_loop
+async def before_msg1():
+    for _ in range(60*60*24):
+        if dt.datetime.now().hour == 16:
+            print('Hola')
+            return
+        await asyncio.sleep(1)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
@@ -34,29 +69,6 @@ async def suma(ctx, n1: int, n2: int):
 @client.command()
 async def sumap(ctx, n1, n2):
   await ctx.send(n1+n2)
-@client.event
-async def on_ready():
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
-  Text2 = "Bot en linea."
-  print("Bot en linea.")
-  Channel = client.get_channel(754175437550387282)
-  message = await Channel.send(Text2)
-  up = '\N{THUMBS UP SIGN}'
-  await message.add_reaction(up)
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    if message.content=="HolaF":
-        await message.channel.send("Hola!!!")
-    await client.process_commands(message)
-@client.listen()
-async def on_message(message):
-    up1='\N{THUMBS UP SIGN}'
-    if message.content=="Hola":
-        await message.add_reaction(up1)
-    if message.content=="El alfredo es un coke":
-        await message.add_reaction(up1)
 @client.command()
 async def resta(ctx, n1: int, n2: int):
  await ctx.send(n1-n2)
