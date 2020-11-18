@@ -31,17 +31,6 @@ async def on_message(message):
         await message.add_reaction(up1)
     if message.content=="El alfredo es un coke":
         await message.add_reaction(up1)
-@tasks.loop(hours=16)
-async def msg1():
-    message_channel= client.get_channel(754175437550387282)
-    await message_channel.send("HOLA")
-@msg1.before_loop
-async def before_msg1():
-    for _ in range(60*60*24):
-        if dt.datetime.now().hour == 16:
-            print('Hola')
-            return
-        await asyncio.sleep(1)
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
