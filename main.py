@@ -52,10 +52,6 @@ async def Time(ctx):
         html_2= await html.text()
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
-@client.command()
-async def op(ctx, operacion: String):
-  suma=eval(operacion)
-  await ctx.send(suma)
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
