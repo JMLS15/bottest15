@@ -54,8 +54,7 @@ async def Time(ctx):
         await ctx.send(html_2['datetime'])
 @client.command()
 async def suma(ctx, n1: int, n2: int):
-  suma=n1+n2
-  await ctx.send(suma)
+  await ctx.send(n1+n2)
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
