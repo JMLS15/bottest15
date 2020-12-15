@@ -72,7 +72,7 @@ async def a(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase A")
   await discord.Member.add_roles(user, role)
-  await ctx.send(user, 'Se te ha asignado a la Clase A Satisfatoriamente.')
+  await ctx.send('{user} Se te ha asignado a la Clase A Satisfatoriamente.'.format(msg))
 @client.command(pass_context=True)
 async def c(ctx):
   user = ctx.message.author
