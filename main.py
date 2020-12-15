@@ -53,8 +53,8 @@ async def Time(ctx):
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
 @client.command()
-async def suma(ctx, n1: int, n2: int):
-  suma=str(int(n1+n2))
+async def suma(ctx, operacion: String):
+  suma=str(eval(operacion))
   await ctx.send(suma)
 @client.command(pass_context=True)
 async def a(ctx):
