@@ -72,25 +72,25 @@ async def a(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase A")
   await discord.Member.add_roles(user, role)
-  await ctx.send("Se te ha asignado a la Clase A satisfactoriamente.")
+  await ctx.send("{message.author} se te ha asignado a la Clase A satisfactoriamente.")
 @client.command(pass_context=True)
 async def c(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase C")
   await discord.Member.add_roles(user, role)
-  await ctx.send("Se te ha asignado a la Clase C satisfactoriamente.")
+  await ctx.send("{message.author} se te ha asignado a la Clase B satisfactoriamente.")
 @client.command(pass_context=True)
 async def cr(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase C")
   await discord.Member.remove_roles(user, role)
-  await ctx.send("Se te ha removido de la Clase C satisfactoriamente.")
+  await ctx.send("{message.author} se te ha removido de la Clase C satisfactoriamente.")
 @client.command(pass_context=True)
 async def ar(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase A")
   await discord.Member.remove_roles(user, role)
-  await ctx.send("Se te ha removido de la Clase A satisfactoriamente.")
+  await ctx.send("{message.author} se te ha removido de la Clase A satisfactoriamente.")
 @client.command()
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
