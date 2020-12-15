@@ -54,11 +54,8 @@ async def Time(ctx):
         await ctx.send(html_2['datetime'])
 @client.command()
 async def suma(ctx, n1: int, n2: int):
-  await ctx.send(n1+n2)
-@client.command()
-async def operacion(ctx):
-  operaciones=str(eval(ctx))
-  await ctx.send("El resultado de las operaciones es: "+operaciones)
+  suma=n1+n2
+  await ctx.send(suma)
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
