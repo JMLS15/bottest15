@@ -56,17 +56,9 @@ async def Time(ctx):
 async def suma(ctx, n1: int, n2: int):
   await ctx.send(n1+n2)
 @client.command()
-async def sumap(ctx, n1, n2):
-  await ctx.send(n1+n2)
-@client.command()
-async def resta(ctx, n1: int, n2: int):
- await ctx.send(n1-n2)
-@client.command()
-async def multiplicacion(ctx, n1: int, n2: int):
- await ctx.send(n1*n2)
-@client.command()
-async def division(ctx, n1: int, n2: int):
- await ctx.send(n1/n2)
+async def operacion(ctx):
+  operaciones=str(eval(ctx))
+  await ctx.send("El resultado de las operaciones es: "+operaciones)
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
