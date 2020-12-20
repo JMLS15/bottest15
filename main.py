@@ -1,4 +1,3 @@
-from boto.s3.connection import S3Connection
 import asyncio
 import aiohttp
 import json
@@ -6,10 +5,10 @@ import discord
 import datetime as dt
 from discord.ext.commands import Bot
 from discord.ext import commands
+from boto.s3.connection import S3Connection
 BOT_PREFIX= ("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
-s3 = S3Connection(os.environ['BOT_TOKEN'])
 @client.event
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
@@ -82,4 +81,4 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-client.run(s3)
+client.run(os.environ['BOT_TOKEN'])
