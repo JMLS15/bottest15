@@ -81,4 +81,4 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-client.run(os.environ['BOT_TOKEN'])
+client.run(S3Connection(os.environ['BOT_TOKEN']))
