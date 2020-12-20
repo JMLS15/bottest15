@@ -5,7 +5,7 @@ import discord
 import datetime as dt
 from discord.ext.commands import Bot
 from discord.ext import commands
-from boto.s3.connection import S3Connection
+import os
 BOT_PREFIX= ("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
@@ -81,4 +81,4 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-client.run(S3Connection(os.environ['BOT_TOKEN']))
+client.run(os.environ['BOT_TOKEN'])
