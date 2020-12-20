@@ -9,6 +9,7 @@ from discord.ext import commands
 BOT_PREFIX= ("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
+s3 = S3Connection(os.environ['BOT_TOKEN'])
 @client.event
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
@@ -81,4 +82,4 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-client.run(os.environ['BOT_TOKEN'])
+client.run(s3)
