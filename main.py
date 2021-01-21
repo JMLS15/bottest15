@@ -81,7 +81,7 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-@client.command()
+@client.command(pass_context = True)
 async def clear(ctx, number):
     mgs = [] #Empty list to put all the messages in the log
     number = int(number) #Converting the amount of messages to delete to an integer
