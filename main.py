@@ -78,10 +78,6 @@ async def ar(ctx):
   await discord.Member.remove_roles(user, role)
   await ctx.send(ctx.message.author.mention+" se te ha removido de la Clase A Satisfatoriamente.")
 @client.command()
-async def roles(ctx):
-  texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
-  await ctx.send(texto)
-@client.command()
 async def clear(ctx, amount=None):
     if amount is None:
         await ctx.channel.purge(limit=5)
