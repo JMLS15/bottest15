@@ -81,11 +81,12 @@ async def ar(ctx):
 async def roles(ctx):
   texto= "Escribe !a para obtener tu Rol de la Clase A. - Escribe !c para obtener tu Rol de la Clase C."
   await ctx.send(texto)
-@client.command(pass_context = True)
-async def clear(ctx, number):
-    mgs = [] #Empty list to put all the messages in the log
-    number = int(number) #Converting the amount of messages to delete to an integer
-    async for x in client.logs_from(ctx.message.channel, limit = number):
-        mgs.append(x)
-    await client.delete_messages(mgs)
+@client.command()
+async def clear(ctx, amount=None):
+    if amount is None:
+        await ctx.channel.purge(limit=5)
+    elif amount == "all":
+        await ctx.channel.purge()
+    else:
+        await ctx.channel.purge(limit=int(amount))
 client.run(os.environ['BOT_TOKEN'])
