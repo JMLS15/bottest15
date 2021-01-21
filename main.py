@@ -84,5 +84,5 @@ async def clear(ctx, amount=None):
     elif amount == "all":
         await ctx.channel.purge()
     else:
-        await ctx.channel.purge(limit=int(amount+1))
+        await ctx.channel.purge(limit=int(amount))
 client.run(os.environ['BOT_TOKEN'])
