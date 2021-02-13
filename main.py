@@ -1,14 +1,14 @@
-import asyncio
 import aiohttp
 import json
 import discord
-import datetime as dt
-from discord.ext.commands import Bot
-from discord.ext import commands
 import os
-BOT_PREFIX= ("?")
+from discord.ext.commands import Bot
+BOT_PREFIX =("?")
 client = Bot(command_prefix=BOT_PREFIX)
 Channel2 = client.get_channel(428654179217571842)
+@client.event
+async def on_command_error(ctx, error):
+    await ctx.send(f"An error occured: {str(error)}")
 @client.event
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Bot prefix is ?"))
@@ -32,6 +32,14 @@ async def on_message(message):
         await message.add_reaction(up1)
     if message.content=="El alfredo es un coke":
         await message.add_reaction(up1)
+@client.command()
+async def shutdown(ctx):
+    id=str(ctx.author.id)
+    if id == '238762286922072064':
+        await ctx.send('Shutting down the bot!')
+        await ctx.bot.logout()
+    else:
+        await ctx.send("You dont have sufficient permmisions to perform this action!")
 @client.command()
 async def USD(ctx):
     async with aiohttp.ClientSession() as session:
@@ -79,10 +87,12 @@ async def ar(ctx):
   await ctx.send(ctx.message.author.mention+" se te ha removido de la Clase A Satisfatoriamente.")
 @client.command()
 async def clear(ctx, amount=None):
+    amount2 = int(amount)
+    amount2 = amount2+1
     if amount is None:
         await ctx.channel.purge(limit=5)
     elif amount == "all":
         await ctx.channel.purge()
     else:
-        await ctx.channel.purge(limit=int(amount))
+        await ctx.channel.purge(limit=amount2)
 client.run(os.environ['BOT_TOKEN'])
