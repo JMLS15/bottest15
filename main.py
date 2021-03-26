@@ -24,6 +24,8 @@ async def on_message(message):
         return
     if message.content=="HolaF":
         await message.channel.send("Hola!!!")
+    if message.author.id == "435607040812122122":
+        await client.add_reaction(message, '819468764637954099')
     await client.process_commands(message)
 @client.listen()
 async def on_message(message):
