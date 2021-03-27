@@ -32,8 +32,6 @@ async def on_message(message):
         await message.add_reaction(up1)
     if message.content=="El alfredo es un coke":
         await message.add_reaction(up1)
-    if message.author.id == "435607040812122122":
-        await message.add_reaction('819468764637954099')
 @client.command()
 async def shutdown(ctx):
     id=str(ctx.author.id)
