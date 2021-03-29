@@ -28,8 +28,10 @@ async def on_message(message):
 @client.listen()
 async def on_message(message):
     okpelon='<:okpelon:819468764637954099>'
+    manute='<:Manute:813289655666606091>'
     if message.author.id==435607040812122122:
         await message.add_reaction(okpelon)
+        await message.add_reaction(manute)
 @client.command()
 async def shutdown(ctx):
     id=str(ctx.author.id)
