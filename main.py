@@ -27,9 +27,8 @@ async def on_message(message):
     await client.process_commands(message)
 @client.listen()
 async def on_message(message):
-    up1='\N{THUMBS UP SIGN}'
     okpelon='<:okpelon:819468764637954099>'
-    if message.author.id==238762286922072064:
+    if message.author.id==435607040812122122:
         await message.add_reaction(okpelon)
 @client.command()
 async def shutdown(ctx):
