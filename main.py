@@ -28,11 +28,7 @@ async def on_message(message):
 @client.listen()
 async def on_message(message):
     up1='\N{THUMBS UP SIGN}'
-    if message.content=="Hola":
-        await message.add_reaction(up1)
-    if message.content=="El alfredo es un coke":
-        await message.add_reaction(up1)
-    if message.author.id=='238762286922072064':
+    if message.author.id==238762286922072064:
         await message.add_reaction(up1)
 @client.command()
 async def shutdown(ctx):
