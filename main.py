@@ -31,7 +31,22 @@ async def on_message(message):
     manute='<:Manute:813289655666606091>'
     if message.author.id==435607040812122122:
         await message.add_reaction(okpelon)
-        await message.add_reaction(manute)
+        await message.add_reaction('⭕')
+        await message.add_reaction('🇰')
+        await message.add_reaction('🇵')
+        await message.add_reaction('🇪')
+        await message.add_reaction('🇱')
+        await message.add_reaction('🇴')
+        await message.add_reaction('🇳')
+   if message.author.id==238762286922072064:
+        await message.add_reaction(okpelon)
+        await message.add_reaction('⭕')
+        await message.add_reaction('🇰')
+        await message.add_reaction('🇵')
+        await message.add_reaction('🇪')
+        await message.add_reaction('🇱')
+        await message.add_reaction('🇴')
+        await message.add_reaction('🇳')
 @client.command()
 async def shutdown(ctx):
     id=str(ctx.author.id)
