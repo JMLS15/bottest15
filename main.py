@@ -28,6 +28,9 @@ async def on_message(message):
     if message.content=="¿El fernando es pelon?":
         await message.channel.send("sies")
         await message.channel.send('<:okpelon:819468764637954099>')
+    if message.content=="El fernando es pelon":
+        await message.channel.send("sies")
+        await message.channel.send('<:okpelon:819468764637954099>')
     if message.content.startswith('<:AdminPuto:748378662063046688>'):
         await message.add_reaction(okpelon)
         await message.add_reaction('⭕')
