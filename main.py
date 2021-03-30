@@ -24,9 +24,19 @@ async def on_message(message):
         return
     if message.content=="HolaF":
         await message.channel.send("Hola!!!")
+        await message.add_reaction('👍')
     if message.content=="¿El fernando es pelon?":
         await message.channel.send("sies")
         await message.channel.send('<:okpelon:819468764637954099>')
+    if message.content.startswith('<:AdminPuto:748378662063046688>'):
+        await message.add_reaction(okpelon)
+        await message.add_reaction('⭕')
+        await message.add_reaction('🇰')
+        await message.add_reaction('🇵')
+        await message.add_reaction('🇪')
+        await message.add_reaction('🇮')
+        await message.add_reaction(manute)
+        await message.add_reaction('🇳')
     await client.process_commands(message)
 @client.listen()
 async def on_message(message):
