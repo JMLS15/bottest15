@@ -35,17 +35,13 @@ async def on_message(message):
         await message.add_reaction('🇰')
         await message.add_reaction('🇵')
         await message.add_reaction('🇪')
-        await message.add_reaction('🇱')
-        await message.add_reaction('🇴')
         await message.add_reaction('🇳')
-   if message.author.id==238762286922072064:
+    if message.author.id==238762286922072064:
         await message.add_reaction(okpelon)
         await message.add_reaction('⭕')
         await message.add_reaction('🇰')
         await message.add_reaction('🇵')
         await message.add_reaction('🇪')
-        await message.add_reaction('🇱')
-        await message.add_reaction('🇴')
         await message.add_reaction('🇳')
 @client.command()
 async def shutdown(ctx):
