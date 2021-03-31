@@ -88,7 +88,6 @@ async def Time(ctx):
 @client.command(pass_context=True)
 async def chnick(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
-    await ctx.send(f'El nick se ha cambiado para {member.mention} ')
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
