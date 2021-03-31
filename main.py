@@ -2,6 +2,7 @@ import aiohttp
 import json
 import discord
 import os
+import asyncio
 from discord.ext.commands import Bot
 BOT_PREFIX =("?")
 client = Bot(command_prefix=BOT_PREFIX)
@@ -46,6 +47,7 @@ async def on_message(message):
     okpelon='<:okpelon:819468764637954099>'
     manute='<:Manute:813289655666606091>'
     if message.author.id==435607040812122122:
+        await message.author.edit(nick="Pelon Pelonete Peloncio")
         await message.add_reaction(okpelon)
         await message.add_reaction('⭕')
         await message.add_reaction('🇰')
