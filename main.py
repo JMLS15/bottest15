@@ -84,6 +84,10 @@ async def Time(ctx):
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
 @client.command(pass_context=True)
+async def chnick(ctx, member: discord.Member, nick):
+    await member.edit(nick=nick)
+    await ctx.send(f'El nick se ha cambiado para {member.mention} ')
+@client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
   role = discord.utils.get(user.guild.roles, name="Clase A")
