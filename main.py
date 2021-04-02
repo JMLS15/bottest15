@@ -4,8 +4,9 @@ import discord
 import os
 import asyncio
 from discord.ext.commands import Bot
+intents = discord.Intents().all()
 BOT_PREFIX =("?")
-client = Bot(command_prefix=BOT_PREFIX)
+client = Bot(command_prefix=BOT_PREFIX, intents=intents)
 Channel2 = client.get_channel(428654179217571842)
 @client.event
 async def on_member_update(before, after):
