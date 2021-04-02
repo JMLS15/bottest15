@@ -11,7 +11,7 @@ client = Bot(command_prefix=BOT_PREFIX, intents=intents)
 Channel2 = client.get_channel(428654179217571842)
 @client.event
 async def on_member_update(before, after):
-    if after.nick!=before.nick:
+    if after.nick==before.nick:
         print('BAD NAME')
 @client.event
 async def on_command_error(ctx, error):
