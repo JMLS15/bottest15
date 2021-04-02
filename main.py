@@ -10,8 +10,8 @@ client = Bot(command_prefix=BOT_PREFIX, intents=intents)
 Channel2 = client.get_channel(428654179217571842)
 @client.event
 async def on_member_update(before, after):
-    print(before)
-    print(after)
+    if after.nick=="Hola":
+        after.edit(nick="ALO HAWAI")
 @client.event
 async def on_command_error(ctx, error):
     await ctx.send(f"An error occured: {str(error)}")
