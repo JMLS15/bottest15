@@ -19,6 +19,7 @@ async def on_ready():
   message = await Channel.send(Text2)
   up = '\N{THUMBS UP SIGN}'
   await message.add_reaction(up)
+"""
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -42,6 +43,8 @@ async def on_message(message):
         await message.add_reaction(manute)
         await message.add_reaction('🇳')
     await client.process_commands(message)
+"""
+"""
 @client.listen()
 async def on_message(message):
     okpelon='<:okpelon:819468764637954099>'
@@ -56,6 +59,7 @@ async def on_message(message):
         await message.add_reaction('🇮')
         await message.add_reaction(manute)
         await message.add_reaction('🇳')
+"""
 @client.command()
 async def shutdown(ctx):
     id=str(ctx.author.id)
@@ -85,9 +89,11 @@ async def Time(ctx):
         html_2= await html.text()
         html_2= json.loads(html_2)
         await ctx.send(html_2['datetime'])
+"""
 @client.command(pass_context=True)
 async def chnick(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
+"""
 @client.command(pass_context=True)
 async def a(ctx):
   user = ctx.message.author
